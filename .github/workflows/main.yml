@@ -23,14 +23,14 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Setup Node.js environment
-      uses: actions/setup-node@v1.4.2
+      uses: actions/setup-node@v2-beta
       with:
         node-version : 12  
 
     # Runs a set of commands using the runners shell
     - name: Installation of Surge
-      run: npm install --g surge
+      run: npm install --global surge
       
     - name: Deploying using Surge
-      run: surge ./Surge/ upsilonsolutions.surge.sh --token $ {{secrats.SURGE_TOKEN}}
+      run: surge ./ upsilonsolutions.surge.sh --token $ {{secrats.SURGE_TOKEN}}
         
